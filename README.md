@@ -25,25 +25,23 @@ Execute Django admin and create details for 10 books
 ## PROGRAM
 
 ```
+admin.py
+from django.contrib import admin
+from .models import book_DB,book_DBAdmin
+Thus the program for creating a database using ORM hass been executed successfully
+admin.site.register(book_DB,book_DBAdmin)
 models.py
-
 from django.db import models
 from django.contrib import admin
-class Book_DB(models.Model):
-    slno=models.IntegerField(primary_key="slno");   	
-    bname=models.CharField(max_length=50);
-    author=models.CharField(max_length=20);
-    published_date=models.DateField();
-    prize=models.IntegerField();
-class Book_DBAdmin(admin.ModelAdmin):
-	list_display=("slno", "bname", "author", "published_date", "prize");
-
-admin.py
-
-from django.contrib import admin
-from.models import Book_DB,Book_DBAdmin
-admin.site.register(Book_DB,Book_DBAdmin)
-
+class book_DB(models.Model):
+bookno=models.IntegerField(primary_key="bookno");
+bookname=models.CharField(max_length=20);
+authorname=models.CharField(max_length=20);
+year=models.DateField();
+price=models.IntegerField();
+pages=models.IntegerField();
+class book_DBAdmin(admin.ModelAdmin):
+list_display=("bookno","bookname","authorname","year","price","pages")
 ```
 
 ## OUTPUT
