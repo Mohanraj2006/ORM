@@ -5,7 +5,7 @@
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
-![alt text](<Screenshot 2024-03-06 092518.png>)
+![WhatsApp Image 2024-03-25 at 15 07 58_32e39d7a](https://github.com/Mohanraj2006/ORM/assets/152195759/a000a8f1-35ab-4e03-ba7a-9c5274ea41d0)
 
 
 ## DESIGN STEPS
@@ -27,21 +27,20 @@ Execute Django admin and create details for 10 books
 ```
 admin.py
 from django.contrib import admin
-from .models import book_DB,book_DBAdmin
-Thus the program for creating a database using ORM hass been executed successfully
-admin.site.register(book_DB,book_DBAdmin)
+from .models import Book_DB,Book_DBAdmin
+admin.site.register(Book_DB,Book_DBAdmin)
+
 models.py
 from django.db import models
 from django.contrib import admin
-class book_DB(models.Model):
-bookno=models.IntegerField(primary_key="bookno");
-bookname=models.CharField(max_length=20);
-authorname=models.CharField(max_length=20);
-year=models.DateField();
-price=models.IntegerField();
-pages=models.IntegerField();
-class book_DBAdmin(admin.ModelAdmin):
-list_display=("bookno","bookname","authorname","year","price","pages")
+class Book_DB(models.Model):
+     serialno=models.IntegerField(primary_key="serialno");
+     bookname=models.CharField(max_length=20);
+     publisher=models.CharField(max_length=20);
+     Dop=models.DateField();
+     totalpg=models.IntegerField();
+class Book_DBAdmin(admin.ModelAdmin):
+     list_display=("serialno","bookname","publisher","Dop","totalpg");
 ```
 
 ## OUTPUT
